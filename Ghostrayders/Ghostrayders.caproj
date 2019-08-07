@@ -1,0 +1,1439 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Ghostrayders</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>Francesco Bacchelli</author>
+    <author-email>informatico.del.borgo@gmail.com</author-email>
+    <author-website></author-website>
+    <app-id>org.shouldvebeen.ghostrayders</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>26200</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Car" version="1">Car</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>start</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Low quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">No</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="lbls">
+            <object-type name="lblExit" sid="320275201495386">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="lblMoney" sid="862834113815702">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="lblTestPark" sid="555768983088396">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="lblGameOver" sid="973860777919522">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="166201906608087">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="897254538140518">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="lblDollar" sid="870167729055856">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="lblHealth" sid="360925578848541">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="lblStart" sid="862095845354300">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="696484456041856">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="lblStartPressKey" sid="941474567053035">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Flash" sid="262573148614693">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="lblEnd" sid="695671103414102">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="game">
+            <object-folder name="shop">
+                <object-type name="protone" sid="340006274339484">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="737707998569310" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.511111" original-source="C:\Corsi\training\Ghostbusters\weapon.proton.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.155556" />
+                                    <point x="0.5" y="0.177778" />
+                                    <point x="0.9375" y="0.0444444" />
+                                    <point x="0.8125" y="0.488889" />
+                                    <point x="0.65625" y="0.755556" />
+                                    <point x="0.5" y="0.933333" />
+                                    <point x="0.15625" y="0.888889" />
+                                    <point x="0.03125" y="0.488889" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Corsi\training\Ghostbusters\weapon.proton.png">
+                                <collision-poly>
+                                    <point x="0.25" y="0.183673" />
+                                    <point x="0.5" y="0.204082" />
+                                    <point x="0.888889" y="0.0816327" />
+                                    <point x="0.777778" y="0.489796" />
+                                    <point x="0.638889" y="0.734694" />
+                                    <point x="0.5" y="0.897959" />
+                                    <point x="0.194444" y="0.857143" />
+                                    <point x="0.0833333" y="0.489796" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="box" sid="802958329677084">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="992090750458019" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.box.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.155556" />
+                                    <point x="0.5" y="0.177778" />
+                                    <point x="0.9375" y="0.0444444" />
+                                    <point x="0.8125" y="0.488889" />
+                                    <point x="0.65625" y="0.755556" />
+                                    <point x="0.5" y="0.933333" />
+                                    <point x="0.15625" y="0.888889" />
+                                    <point x="0.03125" y="0.488889" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.box.png">
+                                <collision-poly>
+                                    <point x="0.753062" y="0.277778" />
+                                    <point x="0.736734" y="0.5" />
+                                    <point x="0.834694" y="0.845679" />
+                                    <point x="0.508163" y="0.746914" />
+                                    <point x="0.312245" y="0.623457" />
+                                    <point x="0.181633" y="0.5" />
+                                    <point x="0.214286" y="0.228395" />
+                                    <point x="0.508163" y="0.12963" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="gun" sid="407348961216944">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="501374784250161" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.gun.png">
+                                <collision-poly>
+                                    <point x="0.4375" y="0.4375" />
+                                    <point x="0.5" y="0.25" />
+                                    <point x="0.9375" y="0.0625" />
+                                    <point x="0.59375" y="0.59375" />
+                                    <point x="0.5" y="0.625" />
+                                    <point x="0.0625" y="0.9375" />
+                                    <point x="0.34375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.444444" y="0.444444" />
+                                    <point x="0.5" y="0.277778" />
+                                    <point x="0.888889" y="0.111111" />
+                                    <point x="0.583333" y="0.583333" />
+                                    <point x="0.5" y="0.611111" />
+                                    <point x="0.111111" y="0.888889" />
+                                    <point x="0.361111" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="shopArray" sid="368077709339317">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type name="priceproto" sid="112102076849809">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="lblAlert" sid="796055544439448">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="lblLab" sid="997240923464856">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="labIcon" sid="547669722132880">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="457843880227226" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\lab.png">
+                                <collision-poly>
+                                    <point x="0.4" y="0.4" />
+                                    <point x="0.5" y="0.04" />
+                                    <point x="0.58" y="0.42" />
+                                    <point x="0.58" y="0.58" />
+                                    <point x="0.5" y="0.94" />
+                                    <point x="0.38" y="0.62" />
+                                    <point x="0.4" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="lblDollar2" sid="669155995267809">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="inventory">
+                <object-type name="box2" sid="284944992416775">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="540166813053340" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.box.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.155556" />
+                                    <point x="0.5" y="0.177778" />
+                                    <point x="0.9375" y="0.0444444" />
+                                    <point x="0.8125" y="0.488889" />
+                                    <point x="0.65625" y="0.755556" />
+                                    <point x="0.5" y="0.933333" />
+                                    <point x="0.15625" y="0.888889" />
+                                    <point x="0.03125" y="0.488889" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.box.png">
+                                <collision-poly>
+                                    <point x="0.753062" y="0.277778" />
+                                    <point x="0.736734" y="0.5" />
+                                    <point x="0.834694" y="0.845679" />
+                                    <point x="0.508163" y="0.746914" />
+                                    <point x="0.312245" y="0.623457" />
+                                    <point x="0.181633" y="0.5" />
+                                    <point x="0.214286" y="0.228395" />
+                                    <point x="0.508163" y="0.12963" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="gun2" sid="980676926491848">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="382224029275999" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\weapon.gun.png">
+                                <collision-poly>
+                                    <point x="0.4375" y="0.4375" />
+                                    <point x="0.5" y="0.25" />
+                                    <point x="0.9375" y="0.0625" />
+                                    <point x="0.59375" y="0.59375" />
+                                    <point x="0.5" y="0.625" />
+                                    <point x="0.0625" y="0.9375" />
+                                    <point x="0.34375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.444444" y="0.444444" />
+                                    <point x="0.5" y="0.277778" />
+                                    <point x="0.888889" y="0.111111" />
+                                    <point x="0.583333" y="0.583333" />
+                                    <point x="0.5" y="0.611111" />
+                                    <point x="0.111111" y="0.888889" />
+                                    <point x="0.361111" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="protone2" sid="307835072825514">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="716525630601928" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.511111" original-source="C:\Corsi\training\Ghostbusters\weapon.proton.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.155556" />
+                                    <point x="0.5" y="0.177778" />
+                                    <point x="0.9375" y="0.0444444" />
+                                    <point x="0.8125" y="0.488889" />
+                                    <point x="0.65625" y="0.755556" />
+                                    <point x="0.5" y="0.933333" />
+                                    <point x="0.15625" y="0.888889" />
+                                    <point x="0.03125" y="0.488889" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="C:\Corsi\training\Ghostbusters\weapon.proton.png">
+                                <collision-poly>
+                                    <point x="0.25" y="0.183673" />
+                                    <point x="0.5" y="0.204082" />
+                                    <point x="0.888889" y="0.0816327" />
+                                    <point x="0.777778" y="0.489796" />
+                                    <point x="0.638889" y="0.734694" />
+                                    <point x="0.5" y="0.897959" />
+                                    <point x="0.194444" y="0.857143" />
+                                    <point x="0.0833333" y="0.489796" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="map">
+                <object-type name="building" sid="543116003552035">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="442801009305739">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="7" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="835057236003542" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.gray.png">
+                                <collision-poly>
+                                    <point x="0.132353" y="0.0737705" />
+                                    <point x="0.5" y="0.00819672" />
+                                    <point x="0.985294" y="0.00819672" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.161765" y="0.909836" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.green.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.red.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.gray.box.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.green.gun.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.red.proto.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\building.lab.png">
+                                <collision-poly>
+                                    <point x="0.1375" y="0.0763889" />
+                                    <point x="0.5" y="0.00694444" />
+                                    <point x="0.9875" y="0.00694444" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.1625" y="0.909722" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="man" sid="537472828223184">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="346784488746190">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="573519202031846">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="3" loop="1" name="walk" pingpong="1" repeatcount="1" repeatto="0" sid="471028839263445" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.555556" original-source="C:\Corsi\training\Ghostbusters\man.walk.1.png">
+                                <collision-poly>
+                                    <point x="0.25" y="0.333333" />
+                                    <point x="0.5" y="0.111111" />
+                                    <point x="0.833333" y="0.222222" />
+                                    <point x="0.916667" y="0.444444" />
+                                    <point x="0.916667" y="0.888889" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.166667" y="0.777778" />
+                                    <point x="0.0833333" y="0.444444" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.571429" original-source="C:\Corsi\training\Ghostbusters\man.idle.png">
+                                <collision-poly>
+                                    <point x="0.166667" y="0.142857" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.833333" y="0.142857" />
+                                    <point x="1" y="0.428571" />
+                                    <point x="0.833333" y="0.857143" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.166667" y="0.857143" />
+                                    <point x="0" y="0.428571" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.555556" original-source="C:\Corsi\training\Ghostbusters\man.walk.2.png">
+                                <collision-poly>
+                                    <point x="0.166667" y="0.222222" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.916667" y="0.111111" />
+                                    <point x="0.916667" y="0.444444" />
+                                    <point x="0.833333" y="0.777778" />
+                                    <point x="0.5" y="0.888889" />
+                                    <point x="0.25" y="0.666667" />
+                                    <point x="0.0833333" y="0.444444" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="garage" sid="402568338733211">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="454389097471962" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\garage.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\garage.opened.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="0.625" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="car" sid="472878719794094">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Car" sid="310821939919046">
+                            <behavior id="Car" />
+                        </behavior-type>
+                        <behavior-type name="Pathfinding" sid="749529786285507">
+                            <behavior id="Pathfinding" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="686098789343327" speed="5">
+                            <frame duration="1" hotspotX="0.671875" hotspotY="0.541667" original-source="C:\Corsi\training\Ghostbusters\car.96x32.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.015625" y="0.958333" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.671875" hotspotY="0.541667">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.015625" y="0.958333" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="palace" sid="166553510982323">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="999647221287698">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="941289522451068" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\wall.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\wall.blue.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\wall.freen.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\wall.red.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\rooftop.center.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\rooftop.left.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\rooftop.right.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\wall.vertical.red.png">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="roadwheel" sid="339514066638220">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="689834712496201" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\road.wheel.png">
+                                <collision-poly>
+                                    <point x="0.15625" y="0.15625" />
+                                    <point x="0.5" y="0.0625" />
+                                    <point x="0.84375" y="0.15625" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.8125" y="0.8125" />
+                                    <point x="0.5" y="0.9375" />
+                                    <point x="0.1875" y="0.8125" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="roads" sid="830363923556675">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="place" sid="433676512212241" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="14" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="580346817249255" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\sidewalk.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="shadow" sid="696354239300624">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="271493104136037" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\shadow.diagonal.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="0.5" y="0.28125" />
+                                    <point x="0.65625" y="0.34375" />
+                                    <point x="0.9375" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\shadow.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="window" sid="710893391879001">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="942020629535469" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Corsi\training\Ghostbusters\window.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="point" sid="912187982266397">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="place" sid="346597907720355" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="273920143402715" speed="5">
+                            <frame duration="1" hotspotX="0.6" hotspotY="0.6" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="lvls">
+                <object-type name="house" sid="708107574518955">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="28" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="975821478638425" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Ghostbusters\house.floor.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.stairs.png">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Ghostbusters\house.como.png">
+                                <collision-poly>
+                                    <point x="0.25" y="0.177778" />
+                                    <point x="0.5" y="0.0444444" />
+                                    <point x="0.71875" y="0.2" />
+                                    <point x="0.78125" y="0.488889" />
+                                    <point x="0.90625" y="0.933333" />
+                                    <point x="0.0625" y="0.955556" />
+                                    <point x="0.1875" y="0.488889" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Ghostbusters\house.door.png">
+                                <collision-poly>
+                                    <point x="0.0294118" y="0.015625" />
+                                    <point x="0.970588" y="0.015625" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.window.png">
+                                <collision-poly>
+                                    <point x="0.15" y="0.09375" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.85" y="0.09375" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.window.1.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.window.3.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.bed.maxi.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.bed.mini.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.chair.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.comodino.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1.04348" original-source="C:\Corsi\training\Ghostbusters\house.saccopoltrona.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.sofa.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.table.low.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.abatjour.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.citofono.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.clock.wall.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.fridge.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.lamp.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.lamp.soffitto.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.lamp.table.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.phone.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.stereo.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.tv.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\house.kitchen.2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.kitchen.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.table.high.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\house.chair.sideview.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ghostbuster" sid="304098894480006">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Platform" sid="240883070257352">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Bullet" sid="300760935003748">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="BoundToLayout" sid="440763214165734">
+                            <behavior id="bound" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="leftprotowalk" pingpong="0" repeatcount="1" repeatto="0" sid="805626402722301" speed="12">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.692308" y="0.111413" />
+                                    <point x="0.846154" y="0.5" />
+                                    <point x="0.615385" y="0.891304" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto.walk.1.png">
+                                <collision-poly>
+                                    <point x="0.3125" y="0.108696" />
+                                    <point x="0.257813" y="0" />
+                                    <point x="0.679688" y="0.0108696" />
+                                    <point x="0.828125" y="0.519022" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="leftprotoidle" pingpong="0" repeatcount="0" repeatto="0" sid="314607322314078" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.846154" y="0.0434783" />
+                                    <point x="0.605769" y="0.57337" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="rightprotowalk" pingpong="0" repeatcount="1" repeatto="0" sid="668170002258960" speed="12">
+                            <frame duration="1" hotspotX="1" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto.idle.png">
+                                <collision-poly>
+                                    <point x="0.336538" y="0.100543" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.923077" y="0.0217391" />
+                                    <point x="0.769231" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.326923" y="0.611413" />
+                                    <point x="0.153846" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.8125" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto.walk.1.png">
+                                <collision-poly>
+                                    <point x="0.320313" y="0.105978" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.6875" y="0.108696" />
+                                    <point x="0.625" y="0.5" />
+                                    <point x="0.640625" y="0.622282" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="rightprotoidle" pingpong="0" repeatcount="0" repeatto="0" sid="121419954991221" speed="0">
+                            <frame duration="1" hotspotX="1" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto.idle.png">
+                                <collision-poly>
+                                    <point x="0.153846" y="0.0434783" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.923077" y="0.0217391" />
+                                    <point x="0.769231" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0.298077" y="1" />
+                                    <point x="0.384615" y="0.684783" />
+                                    <point x="0.153846" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="leftnonewalk" pingpong="0" repeatcount="1" repeatto="0" sid="426445950617258" speed="12">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.none.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.692308" y="0.111413" />
+                                    <point x="0.846154" y="0.5" />
+                                    <point x="0.615385" y="0.891304" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.1875" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.none.walk.1.png">
+                                <collision-poly>
+                                    <point x="0.3125" y="0.108696" />
+                                    <point x="0.257813" y="0" />
+                                    <point x="0.679688" y="0.0108696" />
+                                    <point x="0.828125" y="0.519022" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="leftnoneidle" pingpong="0" repeatcount="0" repeatto="0" sid="981325588906594" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.none.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.846154" y="0.0434783" />
+                                    <point x="0.605769" y="0.57337" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="rightnonewalk" pingpong="0" repeatcount="1" repeatto="0" sid="547259997457100" speed="12">
+                            <frame duration="1" hotspotX="1" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.none.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.692308" y="0.111413" />
+                                    <point x="0.846154" y="0.5" />
+                                    <point x="0.615385" y="0.891304" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.8125" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.none.walk.1.png">
+                                <collision-poly>
+                                    <point x="0.3125" y="0.108696" />
+                                    <point x="0.257813" y="0" />
+                                    <point x="0.679688" y="0.0108696" />
+                                    <point x="0.828125" y="0.519022" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="rightnoneidle" pingpong="0" repeatcount="0" repeatto="0" sid="259034353334018" speed="0">
+                            <frame duration="1" hotspotX="1" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.none.idle.png">
+                                <collision-poly>
+                                    <point x="0.0769231" y="0.0217391" />
+                                    <point x="0.461538" y="0.0217391" />
+                                    <point x="0.538462" y="0.130435" />
+                                    <point x="0.769231" y="0.5" />
+                                    <point x="0.615385" y="0.891304" />
+                                    <point x="0.461538" y="0.956522" />
+                                    <point x="0.153846" y="0.956522" />
+                                    <point x="0.230769" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="leftgunwalk" pingpong="0" repeatcount="1" repeatto="0" sid="287456755757453" speed="12">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.gun.idle.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.714286" y="0.130435" />
+                                    <point x="0.857143" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.52381" y="0.76087" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.gun.walk.1.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.714286" y="0.130435" />
+                                    <point x="0.857143" y="0.5" />
+                                    <point x="0.904762" y="0.956522" />
+                                    <point x="0.47619" y="1" />
+                                    <point x="0.238095" y="0.891304" />
+                                    <point x="0.52381" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="leftgunidle" pingpong="0" repeatcount="0" repeatto="0" sid="701419594031358" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.gun.idle.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.714286" y="0.130435" />
+                                    <point x="0.857143" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.52381" y="0.76087" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="rightgunwalk" pingpong="0" repeatcount="1" repeatto="0" sid="474596952039652" speed="12">
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.gun.idle.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.285714" y="0.130435" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.238095" y="0.891304" />
+                                    <point x="0.142857" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.gun.walk.1.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.285714" y="0.130435" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.47619" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="1" />
+                                    <point x="0.0952381" y="0.956522" />
+                                    <point x="0.142857" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="rightgunidle" pingpong="0" repeatcount="0" repeatto="0" sid="597773823988702" speed="0">
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.gun.idle.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.714286" y="0.130435" />
+                                    <point x="0.857143" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.52381" y="0.76087" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="leftprotogunwalk" pingpong="0" repeatcount="1" repeatto="0" sid="961233726602339" speed="12">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto+gun.idle.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.904762" y="0.0434783" />
+                                    <point x="0.904762" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.52381" y="0.76087" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto+gun.walk.1.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.904762" y="0.0434783" />
+                                    <point x="0.904762" y="0.956522" />
+                                    <point x="0.47619" y="1" />
+                                    <point x="0.238095" y="0.891304" />
+                                    <point x="0.52381" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="leftprotogunidle" pingpong="0" repeatcount="1" repeatto="0" sid="203686788314349" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.left.proto+gun.idle.png">
+                                <image-point name="ray" x="0.047619" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.52381" y="0.23913" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.904762" y="0.0434783" />
+                                    <point x="0.904762" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.52381" y="0.76087" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="1" name="rightprotogunwalk" pingpong="0" repeatcount="1" repeatto="0" sid="844782220068482" speed="12">
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto+gun.idle.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.0952381" y="0.0434783" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.238095" y="0.891304" />
+                                    <point x="0.0952381" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto+gun.walk.1.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.0952381" y="0.0434783" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.47619" y="0.5" />
+                                    <point x="0.761905" y="0.891304" />
+                                    <point x="0.47619" y="1" />
+                                    <point x="0.0952381" y="0.956522" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="rightprotogunidle" pingpong="0" repeatcount="0" repeatto="0" sid="586745193523500" speed="0">
+                            <frame duration="1" hotspotX="0.619048" hotspotY="0.934783" original-source="C:\Corsi\training\Ghostbusters\ghostbuster.right.proto+gun.idle.png">
+                                <image-point name="ray" x="1" y="0.434783" />
+                                <collision-poly>
+                                    <point x="0.0952381" y="0.0434783" />
+                                    <point x="0.47619" y="0" />
+                                    <point x="0.47619" y="0.956522" />
+                                    <point x="0.238095" y="0.891304" />
+                                    <point x="0.0952381" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="topStair" sid="318904362330882">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="851594983543501" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="1" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="bottomStair" sid="472355890773018">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="733460585549063" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="door" sid="221096410643431">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="294970071938413" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="platform" sid="742812487049949">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="663075772718791">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="158769114572727" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\platform.floor.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\platform.stairs.png">
+                                <collision-poly>
+                                    <point x="0.542969" y="0.347656" />
+                                    <point x="0.765625" y="0.222656" />
+                                    <point x="1" y="0" />
+                                    <point x="0.955078" y="0.265625" />
+                                    <point x="0.71875" y="0.4375" />
+                                    <point x="0.296875" y="0.894531" />
+                                    <point x="0" y="1" />
+                                    <point x="0.269531" y="0.722656" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="weaponBoxCircled" sid="655001244418306">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="112778597851377" speed="8">
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.5" original-source="C:\Ghostbusters\weapon.box.circled.1.png" />
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.5" original-source="C:\Ghostbusters\weapon.box.circled.2.png" />
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.5" original-source="C:\Ghostbusters\weapon.box.circled.3.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="spawner" sid="784885823024185">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="life" sid="773858862705959" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="436516276438069" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="2" loop="1" name="hit" pingpong="0" repeatcount="1" repeatto="0" sid="283433658687348" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ghost" sid="376794527383275">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="life" sid="897692811506743" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Sine" sid="809451373511671">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="Pathfinding" sid="151917180863776">
+                            <behavior id="Pathfinding" />
+                        </behavior-type>
+                        <behavior-type name="BoundToLayout" sid="559720244505470">
+                            <behavior id="bound" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="309459992034332" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.75" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.75" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ray" sid="118005832534255">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="4" sid="514618392265182" speed="15">
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\Corsi\training\Ghostbusters\weapon.ray.1.png">
+                                <collision-poly>
+                                    <point x="0.09375" y="0.176471" />
+                                    <point x="0.5" y="0.235294" />
+                                    <point x="0.75" y="0.470588" />
+                                    <point x="1" y="0.470588" />
+                                    <point x="0.96875" y="0.941176" />
+                                    <point x="0.5" y="0.705882" />
+                                    <point x="0.25" y="0.529412" />
+                                    <point x="0" y="0.470588" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\Corsi\training\Ghostbusters\weapon.ray.2.png">
+                                <collision-poly>
+                                    <point x="0.09375" y="0.176471" />
+                                    <point x="0.5" y="0.235294" />
+                                    <point x="0.75" y="0.470588" />
+                                    <point x="1" y="0.470588" />
+                                    <point x="0.96875" y="0.941176" />
+                                    <point x="0.5" y="0.823529" />
+                                    <point x="0.21875" y="0.588235" />
+                                    <point x="0" y="0.470588" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\Ghostbusters\weapon.ray.1.2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\Ghostbusters\weapon.ray.2.2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\g\game develop\training\Ghostrayders\Files\weapon.ray.1.3.png">
+                                <collision-poly>
+                                    <point x="0.0208333" y="0.117647" />
+                                    <point x="0.5" y="0.235294" />
+                                    <point x="0.958333" y="0.235294" />
+                                    <point x="1" y="0.470588" />
+                                    <point x="0.979167" y="0.882353" />
+                                    <point x="0.0833333" y="0.529412" />
+                                    <point x="0" y="0.470588" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0.529412" original-source="C:\g\game develop\training\Ghostrayders\Files\weapon.ray.2.3.1.png">
+                                <collision-poly>
+                                    <point x="0.046875" y="0.176471" />
+                                    <point x="0.5" y="0.294118" />
+                                    <point x="0.875" y="0.470588" />
+                                    <point x="1" y="0.470588" />
+                                    <point x="0.984375" y="0.941176" />
+                                    <point x="0.5" y="0.823529" />
+                                    <point x="0.109375" y="0.588235" />
+                                    <point x="0" y="0.470588" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="life" sid="161366105183718">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="649534595317693">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="856264586848652" speed="0">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\ui.life.full.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="money" sid="171373726010612">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="177801393227707">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="642583254953286" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Ghostbusters\money.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ghostHealth" sid="809374009544877">
+                    <plugin id="progressbar" />
+                    <instance-variables>
+                        <instance-variable name="ghost" sid="758735776156832" type="number" />
+                    </instance-variables>
+                </object-type>
+                <object-type name="weaponBox" sid="648394214376825">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="137869137232444" speed="5">
+                            <frame duration="1" hotspotX="0.5625" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\weapon.box.png">
+                                <collision-poly>
+                                    <point x="0.9375" y="0.5" />
+                                    <point x="0.90625" y="0.8125" />
+                                    <point x="0.5" y="0.9375" />
+                                    <point x="0.25" y="0.5" />
+                                    <point x="0.25" y="0.5" />
+                                    <point x="0.03125" y="0.0625" />
+                                    <point x="0.5" y="0.3125" />
+                                    <point x="0.84375" y="0.3125" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5625" hotspotY="1">
+                                <collision-poly>
+                                    <point x="0.9375" y="0.5" />
+                                    <point x="0.90625" y="0.65625" />
+                                    <point x="0.5" y="0.71875" />
+                                    <point x="0.25" y="0.5" />
+                                    <point x="0.25" y="0.5" />
+                                    <point x="0.03125" y="0.28125" />
+                                    <point x="0.5" y="0.40625" />
+                                    <point x="0.84375" y="0.40625" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-type name="camera" sid="796152210894668">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="414517166370975">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244628986993821" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="menubackground" sid="509034659807561">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="542338962266686">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="623749240528045" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Corsi\training\Ghostbusters\menu.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="inventory" sid="919890776996760">
+                <plugin id="Arr" />
+            </object-type>
+        </object-folder>
+        <object-type name="Touch" sid="920174563144743">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Mouse" sid="976722969669994">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Function" sid="100484630981874">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="ui" sid="338448435356391">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="health" sid="121939373146921" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="324183322471654" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\dollar.png">
+                        <collision-poly>
+                            <point x="0.3125" y="0.3125" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.5625" y="0.4375" />
+                            <point x="0.6875" y="0.5" />
+                            <point x="0.6875" y="0.6875" />
+                            <point x="0.5" y="0.8125" />
+                            <point x="0.28125" y="0.71875" />
+                            <point x="0.40625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.health.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.28125" />
+                            <point x="0.5" y="0.53125" />
+                            <point x="0.859375" y="0.28125" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.84375" y="0.6875" />
+                            <point x="0.15625" y="0.6875" />
+                            <point x="0.015625" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.life.empty.png">
+                        <collision-poly>
+                            <point x="0" y="0.25" />
+                            <point x="1" y="0.25" />
+                            <point x="1" y="0.75" />
+                            <point x="0" y="0.75" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.life.full.png">
+                        <collision-poly>
+                            <point x="0" y="0.25" />
+                            <point x="1" y="0.25" />
+                            <point x="1" y="0.75" />
+                            <point x="0" y="0.75" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.selection.yes.png">
+                        <collision-poly>
+                            <point x="0.0078125" y="0.03125" />
+                            <point x="0.929688" y="0.28125" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.914063" y="0.65625" />
+                            <point x="0.0078125" y="0.96875" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.selection.no.png">
+                        <collision-poly>
+                            <point x="0.929688" y="0.28125" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.914063" y="0.65625" />
+                            <point x="0.273438" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Corsi\training\Ghostbusters\ui.selection.png">
+                        <collision-poly>
+                            <point x="0.03125" y="0.03125" />
+                            <point x="0.5" y="0.1875" />
+                            <point x="0.71875" y="0.28125" />
+                            <point x="0.96875" y="0.5" />
+                            <point x="0.71875" y="0.71875" />
+                            <point x="0.5" y="0.8125" />
+                            <point x="0.03125" y="0.96875" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="747153768579527">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Audio" sid="935546951574973">
+            <plugin id="Audio" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>map.xml</layout>
+        <layout>shop.xml</layout>
+        <layout>gameover.xml</layout>
+        <layout>lv1.xml</layout>
+        <layout>lv2.xml</layout>
+        <layout>lv3.xml</layout>
+        <layout>start.xml</layout>
+        <layout>instructions.xml</layout>
+        <layout>end.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>map event.xml</event-sheet>
+        <event-sheet>shop event.xml</event-sheet>
+        <event-sheet>gameover event.xml</event-sheet>
+        <event-sheet>lv2 event.xml</event-sheet>
+        <event-sheet>lv3 event.xml</event-sheet>
+        <event-sheet>lv1 event.xml</event-sheet>
+        <event-sheet>start event.xml</event-sheet>
+        <event-sheet>end.xml</event-sheet>
+        <event-sheet>instructions.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="34">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="35" />
+        <global-instance type="Function" uid="233" />
+        <global-instance type="Keyboard" uid="290" />
+        <global-instance type="Audio" uid="498">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="door.ogg" />
+        <file name="footstep.ogg" />
+        <file name="ghost.start.moving.toward.ogg" />
+        <file name="ghost.popup.ogg" />
+        <file name="gun.ogg" />
+        <file name="ghost.hit.ogg" />
+        <file name="hit.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="Titolo.ogg" />
+        <file name="Map2.ogg" />
+        <file name="Level.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

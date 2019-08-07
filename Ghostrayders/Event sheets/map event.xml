@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>map event</name>
+    <events>
+        <variable constant="0" name="functionMenu" sid="195474050042367" static="0" type="text">EnterLevel</variable>
+        <variable constant="0" name="carPositionY" sid="647012633358508" static="0" type="number">160</variable>
+        <variable constant="0" name="carForward" sid="334135566905659" static="0" type="number">0</variable>
+        <variable constant="0" name="carPositionX" sid="375075609573663" static="0" type="number">-32</variable>
+        <variable constant="0" name="focusMenu" sid="592585791729519" static="0" type="number">0</variable>
+        <variable constant="0" name="money" sid="540104581701001" static="0" type="number">300</variable>
+        <variable constant="0" name="selectedLevel" sid="952590259755667" static="0" type="number">-1</variable>
+        <variable constant="0" name="inventoryProto" sid="754226866974528" static="0" type="number">1</variable>
+        <variable constant="0" name="inventoryBox" sid="687069140900828" static="0" type="number">0</variable>
+        <variable constant="0" name="inventoryGun" sid="995292301891664" static="0" type="number">1</variable>
+        <variable constant="0" name="carEntrance" sid="299596952485033" static="0" type="number">0</variable>
+        <variable constant="0" name="health" sid="936520516228905" static="0" type="number">4</variable>
+        <event-block sid="291654740369737">
+            <conditions>
+                <condition id="0" name="On function" sid="472561530372777" type="Function">
+                    <param id="0" name="Name">&quot;carEntrance&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="567459667991882" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action behavior="Car" id="3" name="Set speed" sid="820150869233928" type="car">
+                    <param id="0" name="Speed">100</param>
+                </action>
+                <action behavior="Car" id="2" name="Set ignoring input" sid="133363068984527" type="car">
+                    <param id="0" name="Input">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="497472673540491">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="980522041976941" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="327605240867925" type="lblMoney">
+                    <param id="0" name="Text">money&amp;&quot;.0&quot;</param>
+                </action>
+                <action id="-8" name="Set angle" sid="293422512406695" type="car">
+                    <param id="0" name="Angle">carForward</param>
+                </action>
+                <action id="-1" name="Set X" sid="273207873816219" type="car">
+                    <param id="0" name="X">carPositionX</param>
+                </action>
+                <action id="-2" name="Set Y" sid="578680247488538" type="car">
+                    <param id="0" name="Y">carPositionY+32</param>
+                </action>
+                <action id="0" name="Play" sid="116433322138187" type="Audio">
+                    <param id="0" name="Audio file">Map2</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;map&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="776349321865881" type="System">
+                    <param id="0" name="Variable">selectedLevel</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="0" name="Set text" sid="905143603663515" type="lblTestPark">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="272665599864375" type="Function">
+                    <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                    <param id="1" name="Parameter {n}">health</param>
+                </action>
+                <action id="0" name="Call function" sid="291173211085405" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="5" name="Set web font" sid="200736870558134" type="lblMoney">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="681425818164969" type="lblDollar">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="798450301516032" type="lblHealth">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="270558516768376" type="lblTestPark">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="3" name="Set font size" sid="400792205865400" type="lblTestPark">
+                    <param id="0" name="Size (pt)">8</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="872595919432558">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="845743473251076" type="System">
+                            <param id="0" name="Variable">carEntrance</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="455381436580867" type="Function">
+                            <param id="0" name="Name">&quot;carEntrance&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="509810104079328">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="281853382409926" type="System">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="536147272253061" type="ui">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="718412109620238" type="ui" />
+                        <action id="-9" name="Set value" sid="253886286474209" type="System">
+                            <param id="0" name="Variable">focusMenu</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="778575612124672">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="112726306245858" type="System">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="174432359404906" type="ui">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="552172089015163" type="ui" />
+                        <action id="-9" name="Set value" sid="821589404348171" type="System">
+                            <param id="0" name="Variable">focusMenu</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="170865450633263">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="493583102044739" type="System">
+                            <param id="0" name="Object">point</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="456902536635984" type="point" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="137901363674411">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="972837959587640" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="598491752741798" type="camera">
+                    <param id="0" name="X">lerp(Self.X, car.X, 0.03)</param>
+                    <param id="1" name="Y">lerp(Self.Y, car.Y-150, 0.03)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="567173650085506">
+            <conditions>
+                <condition id="0" name="On function" sid="315315841861066" type="Function">
+                    <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="543402469436632" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="167108483330958">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="610151463166286" type="System">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="696194413839361">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="208257114483474" type="System">
+                                    <param id="0" name="First value">ui.health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">health</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="572771958190361">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="131165981296593" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="413491437246256" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="114818863082856" type="ui">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="215516870655880">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="933386246262672" type="System">
+                                    <param id="0" name="First value">ui.health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">health</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="636767593927519">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="215892392805001" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="423108026980187" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="185473284574894" type="ui">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="956674594496417">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="130739912880630" type="System">
+                            <param id="0" name="Variable">health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="432310303955889" type="System" />
+                        <action id="-2" name="Go to layout" sid="983684724404371" type="System">
+                            <param id="0" name="Layout">gameover</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="399032353794235">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="960885074901366" type="car">
+                    <param id="0" name="Object">roads</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="322755429857153" type="roads">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">13</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="723841123931790" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="203349140766979" type="System">
+                    <param id="0" name="Object to create">point</param>
+                    <param id="1" name="Layer">&quot;windows&quot;</param>
+                    <param id="2" name="X">roads.X</param>
+                    <param id="3" name="Y">roads.Y-(roads.Height/6)</param>
+                </action>
+                <action id="-24" name="Move to top" sid="852470301743298" type="point" />
+                <action id="-10" name="Set value" sid="735777436986402" type="point">
+                    <param id="0" name="Instance variable">place</param>
+                    <param id="1" name="Value">roads.place</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="569673296575109">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="853298071313712" type="car">
+                    <param id="0" name="Object">point</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="330788890410463" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="126827553319679" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Car" id="6" name="Set deceleration" sid="308885859492429" type="car">
+                    <param id="0" name="Deceleration">6000</param>
+                </action>
+                <action behavior="Car" id="2" name="Set ignoring input" sid="109716916247168" type="car">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="413251251371637" type="System">
+                    <param id="0" name="Variable">selectedLevel</param>
+                    <param id="1" name="Value">point.place</param>
+                </action>
+                <action id="-9" name="Set value" sid="766370717041226" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="978045893315857" type="point" />
+                <action id="0" name="Set text" sid="293969661730562" type="lblTestPark">
+                    <param id="0" name="Text">&quot;going to level &quot;&amp;point.place</param>
+                </action>
+                <action id="0" name="Call function" sid="883306057385264" type="Function">
+                    <param id="0" name="Name">&quot;showYesNo&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="773940499979782">
+            <conditions>
+                <condition id="0" name="On function" sid="812233047257507" type="Function">
+                    <param id="0" name="Name">&quot;showYesNo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="137654472547183" type="lblTestPark">
+                    <param id="0" name="Text">Self.Text&amp;&quot;-&gt; showYesNo()&quot;</param>
+                </action>
+                <action id="-3" name="Create object" sid="376383840611127" type="System">
+                    <param id="0" name="Object to create">ui</param>
+                    <param id="1" name="Layer">&quot;ui&quot;</param>
+                    <param id="2" name="X">500</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="666281562693368" type="ui">
+                    <param id="0" name="Frame number">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="717656524092323">
+            <conditions>
+                <condition id="0" name="On function" sid="931409710632259" type="Function">
+                    <param id="0" name="Name">&quot;enterLevel&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="149196592609666" type="lblTestPark">
+                    <param id="0" name="Text">&quot;entering level &quot;&amp;Function.Param(0)</param>
+                </action>
+                <action id="33" name="Stop all" sid="560627972112839" type="Audio" />
+                <action id="-9" name="Set value" sid="200223663758916" type="System">
+                    <param id="0" name="Variable">carForward</param>
+                    <param id="1" name="Value">car.Angle</param>
+                </action>
+                <action id="-9" name="Set value" sid="266211704353564" type="System">
+                    <param id="0" name="Variable">carPositionX</param>
+                    <param id="1" name="Value">car.X</param>
+                </action>
+                <action id="-9" name="Set value" sid="992311433095708" type="System">
+                    <param id="0" name="Variable">carPositionY</param>
+                    <param id="1" name="Value">car.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="701316964434569">
+                    <conditions>
+                        <condition id="-19" name="Pick all" sid="384533163019381" type="System">
+                            <param id="0" name="Object">point</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="113619097829989" type="point" />
+                    </actions>
+                </event-block>
+                <event-block sid="220332949403739">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="934233889948570" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="766001369365793" type="System">
+                            <param id="0" name="Layout">shop</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="114237597167770">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="228799349935958" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="944202198696813" type="System">
+                            <param id="0" name="Layout">lv1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="182780159210973">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="940308657981852" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="760604940074634" type="System">
+                            <param id="0" name="Layout">lv2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="399953034557985">
+                    <conditions>
+                        <condition id="1" name="Compare parameter" sid="314927366132110" type="Function">
+                            <param id="0" name="Index">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="948551714011506" type="System">
+                            <param id="0" name="Layout">lv3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="175507593200950">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="476023981889059" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="539206474032825" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="736684733949376" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="297216993100405" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="857697825625063" type="ui">
+                    <param id="0" name="Frame number">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="779483168706963">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="347545231290096" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="354461397426945" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="470220727858023" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="653523564291658" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="383565998871903" type="ui">
+                    <param id="0" name="Frame number">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="578889337266402">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="442140728487613" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="416130196063346" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="461789210726234" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="688422808597340" type="ui" />
+                <action id="-9" name="Set value" sid="481918385409994" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="171826197578506" type="lblTestPark">
+                    <param id="0" name="Text">Self.Text&amp;&quot;-&gt; Enter pressed&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="345687324377696" type="Function">
+                    <param id="0" name="Name">&quot;enterLevel&quot;</param>
+                    <param id="1" name="Parameter {n}">selectedLevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="889999565421915">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="903498188770981" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="711610799385466" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="785209493320421" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="646662117884405" type="ui" />
+                <action id="-9" name="Set value" sid="178271167324888" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Car" id="6" name="Set deceleration" sid="297108558887393" type="car">
+                    <param id="0" name="Deceleration">150</param>
+                </action>
+                <action behavior="Car" id="2" name="Set ignoring input" sid="113985891524315" type="car">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="316382595677138" type="lblTestPark">
+                    <param id="0" name="Text">Self.Text&amp;&quot;-&gt;selectedNo&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="913324351853333">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="959800474136678" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition behavior="Car" id="0" name="Is moving" sid="241388868408300" type="car" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="761679859056338">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="180535547280551" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="185820736251261" type="car">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="848257046200040">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="592969044756274" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="869896251593581">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="625558773961387" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="465081560651297" type="car">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="942397606845079">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="472100577016026" type="car">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">96</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="831196412964109" type="System">
+                    <param id="0" name="Variable">carEntrance</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="2" name="Set ignoring input" sid="659820341841904" type="car">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="520574957941308" type="System">
+                    <param id="0" name="Variable">carEntrance</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="335856608244659" type="garage">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="518928010383442">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="111159952930299" type="car">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="X co-ordinate">10</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="244489942339737" type="System">
+                    <param id="0" name="Variable">carEntrance</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="733176123177857" type="garage">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="142939585110128">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="915776316788935" type="garage">
+                    <param id="0" name="Object">car</param>
+                </condition>
+                <condition id="11" name="Collisions enabled" sid="929977113390931" type="garage" />
+            </conditions>
+            <actions>
+                <action behavior="Car" id="0" name="Stop" sid="561980944341874" type="car" />
+            </actions>
+        </event-block>
+        <event-block sid="601909640865246">
+            <conditions>
+                <condition id="0" name="On function" sid="903319875492497" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="115771113590722" type="lblTestPark">
+                    <param id="0" name="Text">&quot;inventory box: &quot;&amp;inventoryBox</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="919495749453728">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="125687211744746" type="System">
+                            <param id="0" name="Variable">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="970941708749935" type="protone2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="662117552363983">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="141099636481724" type="System">
+                            <param id="0" name="Variable">inventoryBox</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="373501380943690" type="box2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="158789889200978">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="303264025395536" type="System">
+                            <param id="0" name="Variable">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="121194168307233" type="gun2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="910384963500255">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="173066735619428" type="System">
+                    <param id="0" name="Interval (seconds)">random(1,5)</param>
+                </condition>
+                <condition id="-16" name="Pick random instance" sid="323956395826868" type="System">
+                    <param id="0" name="Object">man</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="202685828231016" type="man">
+                    <param id="0" name="Angle">Self.Angle+180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="586369892423609">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="646137836393605" type="car">
+                    <param id="0" name="Object">man</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Car" id="6" name="Set deceleration" sid="777796984027760" type="car">
+                    <param id="0" name="Deceleration">1000</param>
+                </action>
+                <action id="-8" name="Set angle" sid="565264748942283" type="man">
+                    <param id="0" name="Angle">Self.Angle+180</param>
+                </action>
+                <action id="-16" name="Wait" sid="737259723642135" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="495885553427542">
+                    <conditions>
+                        <condition behavior="Car" id="1" name="Compare speed" sid="315323157251581" type="car">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="505153682723964" type="Function">
+                            <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                            <param id="1" name="Parameter {n}">health-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>instructions</name>
+    <events>
+        <event-block sid="857513404617801">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="278528423864292" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="962601201506985" type="lblStartPressKey">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="367500784737366" type="lblStart">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="394654509802434" type="lblTestPark">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="33" name="Stop all" sid="802856083737080" type="Audio" />
+                <action id="0" name="Play" sid="433837112103343" type="Audio">
+                    <param id="0" name="Audio file">Level</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;level&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="132242294094530" type="lblTestPark">
+                    <param id="0" name="Text">&quot;Hey, the city is haunted! Only you are able to capture the ghosts!&#x0D;&#x0A;&#x0D;&#x0A;Citizens are running through the streets like crazy, be carefull while driving!&#x0D;&#x0A;&#x0D;&#x0A;There are three haunted houses and your laboratory. &#x0D;&#x0A;&#x0D;&#x0A;Only your ray can capture the ghosts (&apos;A&apos; button). Watch out for the Big Blacks: they can be captured only with the box. Box can be used once (&apos;A&apos;+&apos;B&apos; buttons). Box are available at the lab and in some haunted houses.&#x0D;&#x0A;Drive and Move with arrows. Climb the stairs with the up arrow on its base. Downstairs with the down arrow facing the direction of the downstairs.&#x0D;&#x0A;Lab objects can be done with money. Money and health are available indoor.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="354811498885830">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="559299418653669" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="796973326973703" type="System">
+                    <param id="0" name="Layout">map</param>
+                </action>
+                <action id="6" name="Stop" sid="685231781601115" type="Audio">
+                    <param id="0" name="Tag">&quot;level&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

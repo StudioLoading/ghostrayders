@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>shop event</name>
+    <events>
+        <variable constant="0" name="shopItemPay" sid="786426019964298" static="0" type="number">0</variable>
+        <variable constant="0" name="shopItemSelected" sid="174056493628321" static="0" type="number">0</variable>
+        <event-block sid="622582188678326">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="833908701460071" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="245273985156570" type="lblMoney">
+                    <param id="0" name="Text">money&amp;&quot;.0&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="423408609083589" type="System">
+                    <param id="0" name="Variable">shopItemSelected</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="2" name="Set at X" sid="902829560896154" type="shopArray">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">1000</param>
+                </action>
+                <action id="2" name="Set at X" sid="454569965552533" type="shopArray">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">300</param>
+                </action>
+                <action id="2" name="Set at X" sid="974225506848765" type="shopArray">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">500</param>
+                </action>
+                <action id="2" name="Set at X" sid="883338197849666" type="inventory">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Value">inventoryProto</param>
+                </action>
+                <action id="2" name="Set at X" sid="661667824938349" type="inventory">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Value">inventoryBox</param>
+                </action>
+                <action id="2" name="Set at X" sid="963346274398180" type="inventory">
+                    <param id="0" name="X">2</param>
+                    <param id="1" name="Value">inventoryGun</param>
+                </action>
+                <action id="5" name="Set web font" sid="297803584982053" type="lblLab">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="808498242324487" type="lblDollar2">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="834777629838713" type="lblMoney">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="339259798079393" type="lblDollar">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="216251201875117" type="priceproto">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="531054939200091" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="362486997330162">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="663695483348454" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="997886591187866" type="System">
+                    <param id="0" name="Variable">shopItemPay</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="720442777443216" type="System">
+                    <param id="0" name="Variable">shopItemSelected</param>
+                    <param id="1" name="Value">(shopItemSelected+1)%3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="227533886064082">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="356928479443940" type="System">
+                    <param id="0" name="Variable">shopItemSelected</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="289823281363772" type="protone">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="553621245602479" type="gun">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="677039141036149" type="box">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="245392562381016">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="623705834253595" type="System">
+                    <param id="0" name="Variable">shopItemSelected</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="312565380358346" type="protone">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="622288084965356" type="box">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="220414763217248" type="gun">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="668611764136481">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="318314306019795" type="System">
+                    <param id="0" name="Variable">shopItemSelected</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="871773989837229" type="protone">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="444473415748242" type="box">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="122943847272438" type="gun">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="255015719195861">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="866515772869445" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+                <condition id="17" name="On tap object" sid="494507326629087" type="Touch">
+                    <param id="0" name="Object">lblExit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="494687937888213" type="System">
+                    <param id="0" name="Layout">map</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="950581799184805">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="893507745295387" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="659050852711856" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="852473722143774">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="950511515401433" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="118793367529521" type="System">
+                            <param id="0" name="Object to create">ui</param>
+                            <param id="1" name="Layer">&quot;ui&quot;</param>
+                            <param id="2" name="X">250</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="880143622555658" type="ui">
+                            <param id="0" name="Frame number">4</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="799192412902977" type="System">
+                            <param id="0" name="Variable">shopItemPay</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="503847728049217" type="System">
+                            <param id="0" name="Variable">focusMenu</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="180417331210306">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="996105097359648" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="236203138443765" type="System">
+                    <param id="0" name="Variable">shopItemPay</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="964914602113794" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="747178823110758" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="976421362671490" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">5</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="536034511518836">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="488520891954652" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="398751085920167" type="System">
+                            <param id="0" name="Variable">focusMenu</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="565771651152470" type="ui" />
+                        <action id="-9" name="Set value" sid="180279728252963" type="System">
+                            <param id="0" name="Variable">shopItemPay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="967463647216648">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="603007629934714" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="829788154831214" type="System">
+                    <param id="0" name="Variable">shopItemPay</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="753983203477123" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="660745910006546" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="367840431396262" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="977084129142452" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="937372474947862" type="ui" />
+                <action id="-9" name="Set value" sid="500625835187871" type="System">
+                    <param id="0" name="Variable">shopItemPay</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="932748595149317">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="990137026026366" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="628404544472835" type="lblAlert">
+                            <param id="0" name="Text">shopArray.At(shopItemSelected)&amp;&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="466863357602500">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="696383430253618" type="System">
+                                    <param id="0" name="Variable">money</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">shopArray.At(shopItemSelected)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="279952098383804" type="lblAlert">
+                                    <param id="0" name="Text">Self.Text&amp;&quot; Not Enough money&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="176302141675942">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="229239500353508" type="System">
+                                    <param id="0" name="Variable">money</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">shopArray.At(shopItemSelected)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="298700615963655" type="lblAlert">
+                                    <param id="0" name="Text">&quot;you got &quot;&amp;shopItemSelected</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="390385660878414" type="System">
+                                    <param id="0" name="Variable">money</param>
+                                    <param id="1" name="Value">shopArray.At(shopItemSelected)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="830139826600876" type="Function">
+                                    <param id="0" name="Name">&quot;bought&quot;</param>
+                                    <param id="1" name="Parameter {n}">shopArray.CurX</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="684866650991868">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="782477936349670" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="141227039072502" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="154307433349907" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="302929724874281" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="891292232309636" type="ui">
+                    <param id="0" name="Frame number">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="398630009073592">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="535403809373236" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="828425371856616" type="System">
+                    <param id="0" name="Variable">focusMenu</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="890713069935611" type="System">
+                    <param id="0" name="Object">ui</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="544623225412009" type="ui">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="451460770596736" type="ui">
+                    <param id="0" name="Frame number">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="637606527032559">
+            <conditions>
+                <condition id="0" name="On function" sid="858728476248908" type="Function">
+                    <param id="0" name="Name">&quot;bought&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Set at X" sid="256906053084453" type="inventory">
+                    <param id="0" name="X">shopItemSelected</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="472848101311373" type="lblAlert">
+                    <param id="0" name="Text">&quot;inventoryProto to &quot;&amp;inventory.At(0)&amp;&quot; inventoryBox &quot;&amp;inventory.At(1)</param>
+                </action>
+                <action id="-9" name="Set value" sid="483890869334665" type="System">
+                    <param id="0" name="Variable">inventoryProto</param>
+                    <param id="1" name="Value">inventory.At(0)</param>
+                </action>
+                <action id="-9" name="Set value" sid="825318019408284" type="System">
+                    <param id="0" name="Variable">inventoryBox</param>
+                    <param id="1" name="Value">inventory.At(1)</param>
+                </action>
+                <action id="-9" name="Set value" sid="231966203252577" type="System">
+                    <param id="0" name="Variable">inventoryGun</param>
+                    <param id="1" name="Value">inventory.At(2)</param>
+                </action>
+                <action id="0" name="Call function" sid="111562735870250" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="194133076153051">
+            <conditions>
+                <condition id="0" name="On function" sid="473949427207144" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="629364613903270" type="lblAlert">
+                    <param id="0" name="Text">&quot;updating inventory &quot;&amp;inventory.Count</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="560797933630746">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="595825846032542" type="System">
+                            <param id="0" name="Variable">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="824280429132476" type="protone2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="150836184489780">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="151259752007200" type="System">
+                            <param id="0" name="Variable">inventoryBox</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="884841121084464" type="box2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="637088222962767">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="518824517432786" type="System">
+                            <param id="0" name="Variable">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="232684430373049" type="gun2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="827581128110081">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="728257007701649" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="735825594373362" type="lblMoney">
+                    <param id="0" name="Text">money&amp;&quot;.0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

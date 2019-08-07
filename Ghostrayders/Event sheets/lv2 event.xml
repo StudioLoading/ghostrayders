@@ -1,0 +1,2074 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>lv2 event</name>
+    <events>
+        <variable constant="0" name="bossKilled" sid="605373339654897" static="0" type="number">0</variable>
+        <variable constant="0" name="capturing" sid="883364282496606" static="0" type="number">0</variable>
+        <variable constant="0" name="maxghosts" sid="654718921377584" static="0" type="number">5</variable>
+        <variable constant="0" name="shooting" sid="359297854448782" static="0" type="number">0</variable>
+        <variable constant="0" name="climbing" sid="674042678821968" static="0" type="number">0</variable>
+        <event-block sid="734761725515645">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="286100256660121" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="352179254414752" type="lblMoney">
+                    <param id="0" name="Text">money&amp;&quot;.0&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="968340952762720" type="lblTestPark">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="659597033483691" type="lblMoney">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="852281074853156" type="lblDollar">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="748865354943892" type="lblHealth">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="0" name="Call function" sid="702017036715542" type="Function">
+                    <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                    <param id="1" name="Parameter {n}">health</param>
+                </action>
+                <action id="0" name="Call function" sid="768377075868488" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Play" sid="998680542092624" type="Audio">
+                    <param id="0" name="Audio file">door</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;door&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="401040160477692" type="Audio">
+                    <param id="0" name="Audio file">Level</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;level&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="161400341944819">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="819812385933049" type="System">
+                            <param id="0" name="First value">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="649755432321225" type="System">
+                            <param id="0" name="First value">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="771721117228413" type="ghostbuster">
+                            <param id="0" name="Animation">&quot;rightnoneidle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="735077217623113">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="601315677062049" type="System">
+                            <param id="0" name="First value">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="131889796597309" type="System">
+                            <param id="0" name="First value">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="271930732459474" type="ghostbuster">
+                            <param id="0" name="Animation">&quot;rigthprotoidle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="623885415662236">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="987749500218498" type="System">
+                            <param id="0" name="First value">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="118581708311890" type="System">
+                            <param id="0" name="First value">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="995874904405128" type="ghostbuster">
+                            <param id="0" name="Animation">&quot;rightgunidle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="982965466715245">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="969204950902821" type="System">
+                            <param id="0" name="First value">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="692662861749702" type="System">
+                            <param id="0" name="First value">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="226626115766049" type="ghostbuster">
+                            <param id="0" name="Animation">&quot;rightprotogunidle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="391527524407810">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="144019383335441" type="System">
+                            <param id="0" name="Variable">bossKilled</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="325447425237771" type="System">
+                            <param id="0" name="Object to create">spawner</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="X">296.599</param>
+                            <param id="3" name="Y"> 251.4</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="139222074923408" type="spawner">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="181815402359373" type="System">
+                            <param id="0" name="Object to create">ghostHealth</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="X">spawner.X-16</param>
+                            <param id="3" name="Y">spawner.Y+32</param>
+                        </action>
+                        <action id="4" name="Set maximum" sid="507114609372773" type="ghostHealth">
+                            <param id="0" name="Maximum">100</param>
+                        </action>
+                        <action id="3" name="Set progress" sid="682601504464670" type="ghostHealth">
+                            <param id="0" name="Value">100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="457224308250772" type="ghostHealth">
+                            <param id="0" name="Instance variable">ghost</param>
+                            <param id="1" name="Value">spawner.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="605915473147028">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="530540008963566" type="System">
+                            <param id="0" name="Variable">bossKilled</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="254322218744074">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="151874031281891" type="System">
+                                    <param id="0" name="Object">ghost</param>
+                                    <param id="1" name="Expression">ghost.UID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">bossKilled</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="918778955243417" type="ghost" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="482959258780374">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="402897238451073" type="System">
+                                            <param id="0" name="Object">ghostHealth</param>
+                                            <param id="1" name="Expression">ghostHealth.ghost</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">ghost.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="409684342802173" type="ghostHealth" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="571191439615879">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="313305253445345" type="System">
+                            <param id="0" name="Variable">bossKilled</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="353418058786752" type="System">
+                            <param id="0" name="Object to create">spawner</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="X">612.599</param>
+                            <param id="3" name="Y">381</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="118718033439721" type="spawner">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="549301667147452" type="System">
+                            <param id="0" name="Object to create">ghostHealth</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="X">spawner.X-16</param>
+                            <param id="3" name="Y">spawner.Y+32</param>
+                        </action>
+                        <action id="4" name="Set maximum" sid="769739838834679" type="ghostHealth">
+                            <param id="0" name="Maximum">100</param>
+                        </action>
+                        <action id="3" name="Set progress" sid="186688736426529" type="ghostHealth">
+                            <param id="0" name="Value">100</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="748499105531284" type="ghostHealth">
+                            <param id="0" name="Instance variable">ghost</param>
+                            <param id="1" name="Value">spawner.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="931433461946567" title="Ghostbuster Movements">
+            <sub-events>
+                <event-group description="" sid="750937388568684" title="Stairs">
+                    <sub-events>
+                        <event-block sid="546584182735922">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="439157429299532" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="610605472841247" type="ghostbuster">
+                                    <param id="0" name="Object">platform</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="389519536063206">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="413526540810864" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="207408618213998" type="ghostbuster">
+                                            <param id="0" name="Y">Self.Y-5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="930745631969753" type="System">
+                                            <param id="0" name="Variable">climbing</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="809443606326134">
+                                    <conditions>
+                                        <condition id="-19" name="Pick all" sid="726816432948573" type="System">
+                                            <param id="0" name="Object">platform</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="119472353353356">
+                                            <conditions>
+                                                <condition id="3" name="Compare frame" sid="622850745597389" type="platform">
+                                                    <param id="0" name="Comparison">0</param>
+                                                    <param id="1" name="Number">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Solid" id="0" name="Set enabled" sid="385381940873620" type="platform">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="163212833669075">
+                                            <conditions>
+                                                <condition id="3" name="Compare frame" sid="857628172298618" type="platform">
+                                                    <param id="0" name="Comparison">0</param>
+                                                    <param id="1" name="Number">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Solid" id="0" name="Set enabled" sid="430094840036662" type="platform">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="216958336496005">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="949745158873691" type="ghostbuster">
+                                    <param id="0" name="Object">topStair</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="503859615536958" type="System">
+                                    <param id="0" name="Variable">climbing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="118116782001705">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="894998335436676" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="931148916063234" type="System">
+                                            <param id="0" name="Variable">climbing</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="966300937507336">
+                                            <conditions>
+                                                <condition id="-19" name="Pick all" sid="753123424406728" type="System">
+                                                    <param id="0" name="Object">platform</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="365430926725515">
+                                                    <conditions>
+                                                        <condition id="3" name="Compare frame" sid="540231820096726" type="platform">
+                                                            <param id="0" name="Comparison">0</param>
+                                                            <param id="1" name="Number">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Solid" id="0" name="Set enabled" sid="551834204753764" type="platform">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="446996566652723">
+                                                    <conditions>
+                                                        <condition id="3" name="Compare frame" sid="732224337112020" type="platform">
+                                                            <param id="0" name="Comparison">0</param>
+                                                            <param id="1" name="Number">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Solid" id="0" name="Set enabled" sid="362438214340876" type="platform">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="894297206130201">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="669058912516775" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="517956859546778" type="ghostbuster">
+                                    <param id="0" name="Object">topStair</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="537794598943272" type="System">
+                                    <param id="0" name="Variable">climbing</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="550636970253810">
+                                    <conditions>
+                                        <condition id="2" name="Is playing" sid="852905116231880" type="ghostbuster">
+                                            <param id="0" name="Animation">&quot;leftgunidle&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="935080951146699" type="ghostbuster">
+                                            <param id="0" name="Animation">&quot;leftnoneidle&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="403949978272175" type="ghostbuster">
+                                            <param id="0" name="Animation">&quot;leftprotogunidle&quot;</param>
+                                        </condition>
+                                        <condition id="2" name="Is playing" sid="933680370642833" type="ghostbuster">
+                                            <param id="0" name="Animation">&quot;leftprotoidle&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="445815872561457">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="898641947592648" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="643512440028343" type="ghostbuster">
+                                                    <param id="0" name="Y">Self.Y+5</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="341883898802477">
+                                                    <conditions>
+                                                        <condition id="-19" name="Pick all" sid="538100744096518" type="System">
+                                                            <param id="0" name="Object">platform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="941089751780290">
+                                                            <conditions>
+                                                                <condition id="3" name="Compare frame" sid="126203892404214" type="platform">
+                                                                    <param id="0" name="Comparison">0</param>
+                                                                    <param id="1" name="Number">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Solid" id="0" name="Set enabled" sid="877575317856619" type="platform">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="683865593514477">
+                                                            <conditions>
+                                                                <condition id="3" name="Compare frame" sid="148154175331473" type="platform">
+                                                                    <param id="0" name="Comparison">0</param>
+                                                                    <param id="1" name="Number">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Solid" id="0" name="Set enabled" sid="165625472999747" type="platform">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="749004779778524">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="527414008694739" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="446057832393342" type="System">
+                                                            <param id="0" name="Seconds">0.7</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="179702591774312" type="System">
+                                                            <param id="0" name="Variable">climbing</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="810187108248342">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="426929655088996" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                                <condition id="0" name="On key pressed" sid="968737460971095" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="955326940474023" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="867657856360764" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="927662709914290">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="889772009347124" type="System">
+                                            <param id="0" name="Variable">climbing</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="1" name="Is overlapping another object" sid="129030663903998" type="ghostbuster">
+                                            <param id="0" name="Object">bottomStair</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="546237037822180" type="System">
+                                            <param id="0" name="Variable">climbing</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="712887849003460">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="701617675567704" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="345156321802621">
+                                                    <conditions>
+                                                        <condition id="-19" name="Pick all" sid="821592966143939" type="System">
+                                                            <param id="0" name="Object">platform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="900687276063437">
+                                                            <conditions>
+                                                                <condition id="3" name="Compare frame" sid="787221394430406" type="platform">
+                                                                    <param id="0" name="Comparison">0</param>
+                                                                    <param id="1" name="Number">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Solid" id="0" name="Set enabled" sid="404675314665776" type="platform">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="234547502425354">
+                                                            <conditions>
+                                                                <condition id="3" name="Compare frame" sid="790725951579079" type="platform">
+                                                                    <param id="0" name="Comparison">0</param>
+                                                                    <param id="1" name="Number">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Solid" id="0" name="Set enabled" sid="972298705942033" type="platform">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="577840317095480">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="634610512501493" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="997892897928296" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="863143290795418">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="248982141826911" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="204759777016025" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="698432552977267" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftnonewalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="799436251058342">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="550913694997109" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="667346476838532" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="699725771511317" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftprotowalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="903298021558420">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="656213252932992" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="534304447447642" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="414260816997919" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftgunwalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="545234703342092">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="128938406006338" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="491391091323368" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="865199285047648" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftprotogunwalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="443861655174649">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="572643849790101" type="Keyboard">
+                            <param id="0" name="Key">37</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="155224697826125" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="623307407731239">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="261133362297432" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="828279432280302" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="307462085769715" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftnoneidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="806331315076927">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="458377952415429" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="990378609426287" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="960971644898916" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftprotoidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="191688591915456">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="237759341153824" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="255707538301695" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="948403867825515" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftgunidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="154832273074292">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="134295878937934" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="549911376004906" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="766863357748578" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;leftprotogunidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="133981245707457">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="615434160150092" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="403992023077972" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="811778045514728">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="117514684512921" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="217250937148759" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="211576140981915" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightnonewalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="879014633545751">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="842490378453628" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="228001112249876" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="439404161883674" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightprotowalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="859217521504371">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="507885152012153" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="180553331516957" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="813736723931208" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightgunwalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="583597251504874">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="850109700361257" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="241196916644792" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="536872524512757" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightprotogunwalk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="633701508482329">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="880512881216248" type="Keyboard">
+                            <param id="0" name="Key">39</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="539219958782635" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="999015142404067">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="662098658307756" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="641360600836293" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="762741230956272" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightnoneidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="467882492200192">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="267949248005334" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="204899617961067" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="974781472036901" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rigthprotoidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="320531788866970">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="949287194288493" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="268630311304467" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="719379864890921" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightgunidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="294421773479456">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="621170805580781" type="System">
+                                    <param id="0" name="First value">inventoryGun</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="951199795393659" type="System">
+                                    <param id="0" name="First value">inventoryProto</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="804952887083422" type="ghostbuster">
+                                    <param id="0" name="Animation">&quot;rightprotogunidle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="674006057435629">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="530146258070898" type="ghostbuster">
+                            <param id="0" name="Object">weaponBoxCircled</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="534959545974696" type="System">
+                            <param id="0" name="Variable">inventoryBox</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="327718336938528" type="Function">
+                            <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="144547372076922" type="weaponBoxCircled" />
+                    </actions>
+                </event-block>
+                <event-block sid="241399789418427">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="619362049937481" type="ghostbuster">
+                            <param id="0" name="Object">life</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="112968521512547" type="System">
+                            <param id="0" name="Variable">health</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="392274254929381" type="Function">
+                            <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                            <param id="1" name="Parameter {n}">health+1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="912345382197633" type="life" />
+                    </actions>
+                </event-block>
+                <event-block sid="399856468392957">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="175935304831164" type="ghostbuster">
+                            <param id="0" name="Object">money</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="424008178594319" type="Function">
+                            <param id="0" name="Name">&quot;updateMoney&quot;</param>
+                            <param id="1" name="Parameter {n}">money+500</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="380057768602388" type="money" />
+                    </actions>
+                </event-block>
+                <event-block sid="869503347079268">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="416953231541799" type="ghostbuster">
+                            <param id="0" name="Object">door</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="535457956694635">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="508320134075497" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="984547605134545" type="Audio">
+                                    <param id="0" name="Tag">&quot;level&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="306705304352325" type="Audio">
+                                    <param id="0" name="Audio file">door</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;door&quot;</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="372875922688422" type="System">
+                                    <param id="0" name="Layout">map</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="321302995592781" title="Ghost Movements">
+            <sub-events>
+                <event-block sid="426312197575989">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="196746613184718" type="System">
+                            <param id="0" name="Object">ghost</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="119177188372834">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="968512061304971" type="System">
+                                    <param id="0" name="Object">ghostHealth</param>
+                                    <param id="1" name="Expression">ghostHealth.ghost</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">ghost.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="456045168049257" type="ghostHealth">
+                                    <param id="0" name="X">ghost.X - 16</param>
+                                    <param id="1" name="Y">ghost.Y-24</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="839030275876591">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="479635819477700" type="System">
+                            <param id="0" name="Interval (seconds)">6</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="568272056765693" type="System">
+                            <param id="0" name="Object">spawner</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="771294312075977" type="System">
+                            <param id="0" name="Variable">maxghosts</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="671070518165359" type="spawner">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="267335601624445" type="spawner">
+                            <param id="0" name="Object">ghost</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="388886497091965" type="ghost">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">80</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="710474878374854" type="ghost">
+                            <param id="0" name="Object">ghostHealth</param>
+                            <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="170930375172996" type="ghostHealth">
+                            <param id="0" name="Instance variable">ghost</param>
+                            <param id="1" name="Value">ghost.UID</param>
+                        </action>
+                        <action id="4" name="Set maximum" sid="421645992266862" type="ghostHealth">
+                            <param id="0" name="Maximum">ghost.life</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="620389300750964" type="System">
+                            <param id="0" name="Variable">maxghosts</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="212037692004621" type="ghost">
+                            <param id="0" name="Frame number">random(4)</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="597183380447521" type="ghost">
+                            <param id="0" name="X">spawner.X+(random(-1,1) * random(32))</param>
+                        </action>
+                        <action behavior="Sine" id="3" name="Set movement" sid="977053163169519" type="ghost">
+                            <param id="0" name="Movement">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="346134109217669" type="Audio">
+                            <param id="0" name="Audio file">ghost.popup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;ghostpopup&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="914732214647279">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="147367911536920" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="534737561898574" type="System">
+                            <param id="0" name="Object">ghost</param>
+                        </condition>
+                        <condition behavior="Pathfinding" id="4" inverted="1" name="Is moving along path" sid="224364457585982" type="ghost" />
+                        <condition id="-14" name="Compare variable" sid="582986908835261" type="System">
+                            <param id="0" name="Variable">capturing</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="276286051360172" type="ghost">
+                            <param id="0" name="X">ghostbuster.X</param>
+                            <param id="1" name="Y">ghostbuster.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="470458960305459">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="501515949077519" type="ghost" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="292854585319314" type="ghost">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="705229228069423" type="ghost" />
+                    </actions>
+                </event-block>
+                <event-block sid="712258490335839">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="805395753023719" type="ghost" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="843165783255453" type="ghost">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="238493431027811">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="129793898067838" type="ghost">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="327085934814384" type="ghost">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Number">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="933568503563753" type="ray" />
+                        <action id="-9" name="Set value" sid="188453635527776" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="364112246915613" type="System">
+                            <param id="0" name="Variable">maxghosts</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="734985509303434">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="565961382154878" type="System">
+                                    <param id="0" name="Object">ghostHealth</param>
+                                    <param id="1" name="Expression">ghostHealth.ghost</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">ghost.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="868306849388104" type="ghostHealth" />
+                                <action id="-9" name="Destroy" sid="393631001986564" type="ghost" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="204456515974198">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="128232499380921" type="ghost">
+                            <param id="0" name="Object">ray</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="139390552943658" type="ghost">
+                            <param id="0" name="Object">ray</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="536595594978211" type="ray">
+                            <param id="0" name="X">ghost.X</param>
+                            <param id="1" name="Y">ghost.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="947196424562393">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="967008217058249" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="926225314238275" type="Audio">
+                                    <param id="0" name="Audio file">ghost.hit</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">15</param>
+                                    <param id="1" name="Tag (optional)">&quot;ghosthit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="991020022764717">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="696000371836131" type="System">
+                                    <param id="0" name="Object">ghostHealth</param>
+                                    <param id="1" name="Expression">ghostHealth.ghost</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">ghost.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set progress" sid="325630615027343" type="ghostHealth">
+                                    <param id="0" name="Value">ghost.life</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="885502705418808">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="633773615796034" type="ghost">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="290444546344205" type="ghost">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="628733179669453" type="ghost">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="582204587745050" type="ghost">
+                                    <param id="0" name="Opacity">Self.life+20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="577947371638222">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="849261393782394" type="ghost">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="464425079419488" type="ghost">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="425623334394855">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="733137269693048" type="Keyboard">
+                                            <param id="0" name="Key">66</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="882275408555753" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                        <condition id="-2" name="Compare Y" sid="898182084879582" type="ghostbuster">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Y co-ordinate">ghost.Y</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="173818599509410" type="System">
+                                            <param id="0" name="Variable">inventoryBox</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="877961212515699">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="696538029195820" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="649331475781928" type="ghostbuster">
+                                                    <param id="0" name="Object">weaponBox</param>
+                                                    <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-1" name="Set X" sid="365201420123872" type="weaponBox">
+                                                    <param id="0" name="X">ghost.X</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="626606080554261" type="ghost">
+                                                    <param id="0" name="Instance variable">life</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action behavior="Sine" id="0" name="Set active" sid="751563827105606" type="ghost">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action behavior="Pathfinding" id="0" name="Find path" sid="206955208423914" type="ghost">
+                                                    <param id="0" name="X">weaponBox.X</param>
+                                                    <param id="1" name="Y">weaponBox.Y</param>
+                                                </action>
+                                                <action behavior="Pathfinding" id="1" name="Move along path" sid="565917861016110" type="ghost" />
+                                                <action id="-9" name="Set value" sid="165171339462212" type="System">
+                                                    <param id="0" name="Variable">capturing</param>
+                                                    <param id="1" name="Value">ghost.UID</param>
+                                                </action>
+                                                <action behavior="Pathfinding" id="14" name="Set speed" sid="283586221581547" type="ghost">
+                                                    <param id="0" name="Speed">2</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="139953633316481" type="System">
+                                                    <param id="0" name="Variable">inventoryBox</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="255956152241222" type="Function">
+                                                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="121996487639263">
+                                            <conditions>
+                                                <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="963181035128469" type="ghost" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Set scale" sid="652946199200130" type="ghost">
+                                                    <param id="0" name="Scale">0.6</param>
+                                                </action>
+                                                <action id="-16" name="Set opacity" sid="874305554471193" type="ghost">
+                                                    <param id="0" name="Opacity">80</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="561682766737146">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="954212950050868" type="ghost">
+                                                    <param id="0" name="Object">weaponBox</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action disabled="1" id="2" name="Stop" sid="628471058719389" type="weaponBox" />
+                                                <action behavior="Pathfinding" id="2" name="Stop" sid="294377556446164" type="ghost" />
+                                                <action disabled="1" id="5" name="Set frame" sid="982052652162852" type="weaponBox">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="9" name="Set scale" sid="723390328773656" type="ghost">
+                                                    <param id="0" name="Scale">0.2</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="912489182172316">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="316136148854221" type="System">
+                                                            <param id="0" name="Variable">capturing</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-33" name="Pick by comparison" sid="303445713810123" type="System">
+                                                            <param id="0" name="Object">ghostHealth</param>
+                                                            <param id="1" name="Expression">ghostHealth.ghost</param>
+                                                            <param id="2" name="Comparison">0</param>
+                                                            <param id="3" name="Value">ghost.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Wait" sid="841582770528880" type="System">
+                                                            <param id="0" name="Seconds">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="748357707686085" type="ghost" />
+                                                        <action id="-9" name="Destroy" sid="684404044712630" type="ghostHealth" />
+                                                        <action id="-9" name="Destroy" sid="929984233834383" type="weaponBox" />
+                                                        <action id="-9" name="Set value" sid="462385273620940" type="System">
+                                                            <param id="0" name="Variable">capturing</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="354133328455028" type="System">
+                                                            <param id="0" name="Variable">bossKilled</param>
+                                                            <param id="1" name="Value">ghost.UID</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="145274788633366">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="250410363946929" type="System">
+                                                                    <param id="0" name="Variable">bossKilled</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-14" name="Compare variable" sid="358543138776443" type="System">
+                                                                    <param id="0" name="Variable">bossKilled2</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-14" name="Compare variable" sid="331405744127973" type="System">
+                                                                    <param id="0" name="Variable">bossKilled3</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-2" name="Go to layout" sid="134234202284255" type="System">
+                                                                    <param id="0" name="Layout">end</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="331680184842484">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="436890264052144" type="ghost">
+                            <param id="0" name="Object">ghostbuster</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="350266243792644" type="Function">
+                            <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                            <param id="1" name="Parameter {n}">health-1</param>
+                        </action>
+                        <action behavior="Pathfinding" id="2" name="Stop" sid="353687263894623" type="ghost" />
+                        <action behavior="Sine" id="0" name="Set active" sid="782068987259699" type="ghost">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="149245785666001" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="645330116899993" type="ray" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="136824154867805">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="737359479919561" type="System">
+                                    <param id="0" name="First value">ghost.X</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">ghostbuster.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="424675020742617" type="ghostbuster">
+                                    <param id="0" name="X">Self.X-40</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="759054930984602">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="570526158050011" type="System">
+                                    <param id="0" name="First value">ghost.X</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">ghostbuster.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="137714891698942" type="ghostbuster">
+                                    <param id="0" name="X">Self.X+40</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="361478289227775">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="439163460630749" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="325658740353042" type="Audio">
+                                    <param id="0" name="Audio file">hit</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="215844696029552">
+            <conditions>
+                <condition id="0" name="On function" sid="530977351317913" type="Function">
+                    <param id="0" name="Name">&quot;updateHealth&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="707450556582121" type="System">
+                    <param id="0" name="Variable">health</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="312253590779342">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="510658102673187" type="System">
+                            <param id="0" name="Object">ui</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="785107128514771">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="932101325233263" type="System">
+                                    <param id="0" name="First value">ui.health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">health</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="511555547163641">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="747001325305741" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="993639943818272" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="584713243409289" type="ui">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="895702346603349">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="273979071137097" type="System">
+                                    <param id="0" name="First value">ui.health</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">health</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="463119211730905">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="865268267875250" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="187766365027262" type="ui">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="450449082136543" type="ui">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="647497366770089">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="789705580895924" type="System">
+                            <param id="0" name="Variable">health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="323647029483112" type="System" />
+                        <action id="-2" name="Go to layout" sid="744515395003233" type="System">
+                            <param id="0" name="Layout">gameover</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="754634923451014">
+            <conditions>
+                <condition id="0" name="On function" sid="272420070920924" type="Function">
+                    <param id="0" name="Name">&quot;updateInventory&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="179349918657747">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="197516980922566" type="System">
+                            <param id="0" name="Variable">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="896934231901727" type="protone2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="487295091247954">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="607161952127165" type="System">
+                            <param id="0" name="Variable">inventoryBox</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="309400867351797" type="box2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="991219763024135">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="286656192826126" type="System">
+                            <param id="0" name="Variable">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="581392919603286" type="gun2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="443650022573886">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="753917725980874" type="System">
+                            <param id="0" name="Variable">inventoryProto</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="263040544476993" type="protone2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="250416895681707">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="948878411192431" type="System">
+                            <param id="0" name="Variable">inventoryBox</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="657400651841350" type="box2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="513399034061075">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="334566958330433" type="System">
+                            <param id="0" name="Variable">inventoryGun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="923229387626189" type="gun2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="991222420764788">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="848928793352869" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="857896176949957" type="System">
+                    <param id="0" name="Variable">inventoryGun</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="347137429619508" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="778849702079280" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+                <condition id="-15" name="Pick nearest/furthest" sid="204305179928445" type="ghost">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="X">ghostbuster.X</param>
+                    <param id="2" name="Y">ghostbuster.Y</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="879381694623296" type="System">
+                    <param id="0" name="First value">distance(ghost.X, ghost.Y, ghostbuster.X, ghostbuster.Y)</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">256</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="985727724060060" type="System">
+                    <param id="0" name="Variable">shooting</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="142836572146382" type="System">
+                    <param id="0" name="Variable">climbing</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="654421247526565" type="ghostbuster">
+                    <param id="0" name="Object">ray</param>
+                    <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                    <param id="2" name="Image point">&quot;ray&quot;</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="337902523514225" type="ray">
+                    <param id="0" name="X">ghost.X</param>
+                    <param id="1" name="Y">ghost.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="665475060268683">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="373973776302406" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="285180393855498" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="615779357607790" type="Audio">
+                            <param id="0" name="Audio file">gun</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-20</param>
+                            <param id="1" name="Tag (optional)">&quot;gun&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="180077769685141">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="659764398381245" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="603558246805432" type="System">
+                    <param id="0" name="Variable">inventoryGun</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="158468736206860" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="715344362276163" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+                <condition id="-15" name="Pick nearest/furthest" sid="100513579963617" type="spawner">
+                    <param id="0" name="Which">0</param>
+                    <param id="1" name="X">ghostbuster.X</param>
+                    <param id="2" name="Y">ghostbuster.Y</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="286543017949268" type="System">
+                    <param id="0" name="Variable">shooting</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="449115347683496" type="System">
+                    <param id="0" name="Variable">climbing</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="889945172647772" type="ghostbuster">
+                    <param id="0" name="Object">ray</param>
+                    <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                    <param id="2" name="Image point">&quot;ray&quot;</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="438566794609970" type="ray">
+                    <param id="0" name="X">spawner.X</param>
+                    <param id="1" name="Y">spawner.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="422415653202847">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="890296401998175" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="563754209927676" type="System">
+                            <param id="0" name="Variable">shooting</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="530220121101244" type="Audio">
+                            <param id="0" name="Audio file">gun</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;gun&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="462941731989923">
+            <conditions>
+                <condition id="3" name="On key released" sid="316287842372935" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="816647677107375" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="395360700447473" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="483845365820186" type="System">
+                    <param id="0" name="Variable">shooting</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="496986579151399" type="ray" />
+                <action id="6" name="Stop" sid="918584032439715" type="Audio">
+                    <param id="0" name="Tag">&quot;gun&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="239773114149117">
+            <conditions>
+                <condition id="0" name="On function" sid="604969690615467" type="Function">
+                    <param id="0" name="Name">&quot;updateMoney&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="753117843452039" type="System">
+                    <param id="0" name="Variable">money</param>
+                    <param id="1" name="Value">Function.Param(0)</param>
+                </action>
+                <action id="0" name="Set text" sid="740979786244424" type="lblMoney">
+                    <param id="0" name="Text">money&amp;&quot;.0&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="228973668935442">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="902759230918703" type="spawner">
+                    <param id="0" name="Object">ray</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="377544783010421" type="spawner">
+                    <param id="0" name="Object">ray</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="194364877329569" type="spawner">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="170536425063176" type="spawner">
+                    <param id="0" name="Animation">&quot;hit&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="992441148371154">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="586049897273211" type="System">
+                            <param id="0" name="Object">ghostHealth</param>
+                            <param id="1" name="Expression">ghostHealth.ghost</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">spawner.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set progress" sid="344896223616749" type="ghostHealth">
+                            <param id="0" name="Value">spawner.life</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="922419106394744">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="845588190512673" type="spawner">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="719753614152648" type="lblTestPark">
+                    <param id="0" name="Text">spawner.UID&amp;&quot;. Life=&quot;&amp;spawner.life</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="716271848454616">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="971478580810518" type="System">
+                            <param id="0" name="Object">ghostHealth</param>
+                            <param id="1" name="Expression">ghostHealth.ghost</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">spawner.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="444138079201596" type="ghostHealth" />
+                        <action id="-9" name="Destroy" sid="686445504137600" type="spawner" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="505590262984531">
+            <conditions>
+                <condition id="3" name="On key released" sid="884754736547416" type="Keyboard">
+                    <param id="0" name="Key">66</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="894349331462215" type="System">
+                    <param id="0" name="Variable">capturing</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="533934508732150" type="ghost">
+                    <param id="0" name="Object">weaponBox</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="273228347924053" type="lblTestPark">
+                    <param id="0" name="Text">&quot;B released! capturing:&quot;&amp;capturing</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="312466754566642">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="351537717912317" type="System">
+                            <param id="0" name="Object">ghost</param>
+                            <param id="1" name="Expression">ghost.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">capturing</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="933525920602726" type="System">
+                            <param id="0" name="Variable">capturing</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="556114389333827" type="ghost">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="406484307132586" type="ghost">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="488629284726746" type="ghost">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="297454331410880" type="weaponBox" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="191388604246616">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="751678468221074" type="System">
+                                    <param id="0" name="Object">ghostHealth</param>
+                                    <param id="1" name="Expression">ghostHealth.ghost</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">ghost.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="423605944672486" type="ghost">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Value">ghostHealth.Maximum</param>
+                                </action>
+                                <action id="3" name="Set progress" sid="727187748829859" type="ghostHealth">
+                                    <param id="0" name="Value">Self.Maximum</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="647312057509243" type="ghostbuster">
+                                    <param id="0" name="Object">weaponBoxCircled</param>
+                                    <param id="1" name="Layer">&quot;ghosts&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="383711964419542" type="weaponBoxCircled">
+                                    <param id="0" name="X">546</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="420304453776660" type="weaponBoxCircled">
+                                    <param id="0" name="Y">400</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="634950023605328" title="Sound">
+            <sub-events>
+                <event-block sid="445405367882786">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="480543788010648" type="ghost" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="972898148318038" type="Audio">
+                            <param id="0" name="Audio file">ghost.start.moving.toward</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ghoststartmove&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="844609247995086">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="327506553345321" type="ghostbuster" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="833607160436663">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="847531343028966" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="386568027049270" type="Audio">
+                                    <param id="0" name="Audio file">footstep</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-20</param>
+                                    <param id="1" name="Tag (optional)">&quot;footstep&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="715466079055087">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="830417150589367" type="ghostbuster" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="293335294520218">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="288497049360875" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="724739059680161" type="Audio">
+                                    <param id="0" name="Tag">&quot;footstep&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

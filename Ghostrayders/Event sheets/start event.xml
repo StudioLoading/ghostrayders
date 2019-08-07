@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>start event</name>
+    <events>
+        <event-block sid="286285577495568">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="861467520798582" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="755372225344191" type="lblStart">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="418399777452172" type="lblStartPressKey">
+                    <param id="0" name="Family name">&quot;Press Start 2P&quot;</param>
+                    <param id="1" name="CSS URL">&quot;https://fonts.googleapis.com/css?family=Press+Start+2P&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="189952138625434" type="Audio">
+                    <param id="0" name="Audio file">Titolo</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;titolo&quot;</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="246692466271781" type="lblStartPressKey">
+                    <param id="0" name="&apos;On&apos; time">0.5</param>
+                    <param id="1" name="&apos;Off&apos; time">0.2</param>
+                    <param id="2" name="Duration">120.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="525313634817987">
+            <conditions>
+                <condition id="1" name="On any key pressed" sid="732399500565739" type="Keyboard" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="744166617076039" type="System">
+                    <param id="0" name="Layout">instructions</param>
+                </action>
+                <action id="6" name="Stop" sid="250722162410618" type="Audio">
+                    <param id="0" name="Tag">&quot;titolo&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

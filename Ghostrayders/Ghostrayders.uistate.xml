@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <event-sheet active="1" order="0">instructions</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="0" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="object-folder/lbls/" />
+        <folder expanded="0" path="object-folder/game/" />
+        <folder expanded="0" path="object-folder/game/shop/" />
+        <folder expanded="0" path="object-folder/game/inventory/" />
+        <folder expanded="0" path="object-folder/game/map/" />
+        <folder expanded="1" path="object-folder/game/lvls/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="0" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/protone/" />
+        <folder expanded="1" path="animation-folder/box/" />
+        <folder expanded="1" path="animation-folder/gun/" />
+        <folder expanded="1" path="animation-folder/labIcon/" />
+        <folder expanded="1" path="animation-folder/box2/" />
+        <folder expanded="1" path="animation-folder/gun2/" />
+        <folder expanded="1" path="animation-folder/protone2/" />
+        <folder expanded="1" path="animation-folder/building/" />
+        <folder expanded="1" path="animation-folder/man/" />
+        <folder expanded="1" path="animation-folder/garage/" />
+        <folder expanded="1" path="animation-folder/car/" />
+        <folder expanded="1" path="animation-folder/palace/" />
+        <folder expanded="1" path="animation-folder/roadwheel/" />
+        <folder expanded="1" path="animation-folder/roads/" />
+        <folder expanded="1" path="animation-folder/shadow/" />
+        <folder expanded="1" path="animation-folder/window/" />
+        <folder expanded="1" path="animation-folder/point/" />
+        <folder expanded="1" path="animation-folder/house/" />
+        <folder expanded="1" path="animation-folder/ghostbuster/" />
+        <folder expanded="1" path="animation-folder/topStair/" />
+        <folder expanded="1" path="animation-folder/bottomStair/" />
+        <folder expanded="1" path="animation-folder/door/" />
+        <folder expanded="1" path="animation-folder/platform/" />
+        <folder expanded="1" path="animation-folder/weaponBoxCircled/" />
+        <folder expanded="1" path="animation-folder/spawner/" />
+        <folder expanded="1" path="animation-folder/ghost/" />
+        <folder expanded="1" path="animation-folder/ray/" />
+        <folder expanded="1" path="animation-folder/life/" />
+        <folder expanded="1" path="animation-folder/money/" />
+        <folder expanded="1" path="animation-folder/weaponBox/" />
+        <folder expanded="1" path="animation-folder/camera/" />
+        <folder expanded="1" path="animation-folder/menubackground/" />
+        <folder expanded="1" path="animation-folder/ui/" />
+    </folders-expanded>
+</c2uistate>
